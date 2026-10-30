@@ -1,12 +1,17 @@
 import { Hono } from 'hono';
 import { loadConfig, type RigConfig } from './config.js';
 import { lane } from './lane.js';
+import { registerDigestJson } from './routes/digest-json.js';
+import { registerDigestPage } from './routes/digest-page.js';
 import { readStatus } from './status.js';
 import { Layout } from './views/layout.js';
 import { StatusBoard } from './views/status.js';
 
 export function createApp(config: RigConfig = loadConfig()) {
   const app = new Hono();
+
+  registerDigestPage(app, config);
+  registerDigestJson(app, config);
 
   app.get('/health', (c) => c.json({ ok: true, lane: lane().id }));
 
