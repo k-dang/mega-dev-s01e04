@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,17 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+- [#1 — Read and aggregate a night's run log](https://github.com/k-dang/mega-dev-s01e04/issues/1)
+- [#2 — Render the digest HTML page](https://github.com/k-dang/mega-dev-s01e04/issues/2)
+- [#3 — Expose the digest JSON route](https://github.com/k-dang/mega-dev-s01e04/issues/3)
+- [#4 — Link nights from the status board](https://github.com/k-dang/mega-dev-s01e04/issues/4)
+- [#5 — Test the digest routes](https://github.com/k-dang/mega-dev-s01e04/issues/5)
+- [#6 — Publish the digest preview for review](https://github.com/k-dang/mega-dev-s01e04/issues/6)
+- [#7 — Remove preview marker and archive the plan](https://github.com/k-dang/mega-dev-s01e04/issues/7)
+
+## Completion evidence
+
+The reviewer accepted the initial preview. The same public URL was then verified anonymously with HTTP 200 and the clean page; the original immutable deployment was deleted.
