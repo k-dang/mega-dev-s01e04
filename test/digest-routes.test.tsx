@@ -58,7 +58,7 @@ describe('digest routes', () => {
 
       expect(htmlResponse.status).toBe(200);
       expect(jsonResponse.status).toBe(200);
-      expect(html).toContain('<h1>2026-10-28</h1>');
+      expect(html).toMatch(/<h1>[^<]*2026-10-28<\/h1>/);
       expect(digest.rows.map((row: { job: string }) => row.job)).toEqual(['alpha', 'zeta']);
       expect(jobsInHtml(html)).toEqual(digest.rows.map((row: { job: string }) => row.job));
       expect(digest).toMatchObject({
@@ -91,7 +91,7 @@ describe('digest routes', () => {
       expect(html).toContain('—');
       expect(html).toContain('2026-10-28T02:00:00+01:00');
       expect(html).toContain('2026-10-28T01:02:03-04:00');
-      expect(html).toMatch(/class="[^"]*(?:warning|retry|fail)[^"]*"/i);
+      expect(html).toMatch(/<span class="warn">fail[^<]*<\/span>/);
     });
   });
 
